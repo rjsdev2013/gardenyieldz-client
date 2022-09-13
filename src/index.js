@@ -1,13 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import {BrowserRouter as Router} from "react-router-dom"
+import ReactDOM from "react-dom"
 import './index.css';
 import { GardenYieldz } from './components/GardenYieldz';
 import reportWebVitals from './reportWebVitals';
+import createRoot from "react-dom/client"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <GardenYieldz />
+    <Router><GardenYieldz /></Router>
   </React.StrictMode>
 );
 

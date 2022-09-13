@@ -1,7 +1,12 @@
-const URL = "http://localhost:8000"
+const URL = "http://localhost:3000"
 
 export const getJournals = () => {
     return fetch(`${URL}/journals`)
+        .then(res => res.json())
+}
+
+export const getJournalById = (id) => {
+    return fetch(`${URL}/journals/${id}`)
         .then(res => res.json())
 }
 export const addJournals = (newJournal) => {
@@ -16,7 +21,7 @@ export const addJournals = (newJournal) => {
 }
 
 export const deleteJournals = (id) => {
-    return fetch(`${remoteURL}/journals/${id}`, {
+    return fetch(`${URL}/journals/${id}`, {
       method: "DELETE"
     })
     .then(getJournals)

@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { JournalCard } from './JournalCard';
 import { getJournals,addJournals,deleteJournals } from './JournalManager';
-import { JournalCard } from './JournalCard';
 
 export const JournalList = () => {
     const [journals, setJournals] = useState([])
@@ -10,7 +9,11 @@ export const JournalList = () => {
     }, [])
     return (
         <>
-            <div > <JournalCard setJournals = {setJournals}></JournalCard></div>
+            <div className="journals">
+                {
+                   journals.map(journal => <JournalCard key={journal.id} journal={journal} setJournals= {setJournals} />)
+                }
+            </div>
         
         </>
     )
