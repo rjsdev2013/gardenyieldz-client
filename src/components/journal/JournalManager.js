@@ -1,7 +1,12 @@
-const URL = "http://localhost:3000"
+const URL = "http://localhost:8000"
 
 export const getJournals = () => {
-    return fetch(`${URL}/journals`)
+    return fetch(`${URL}/journals`,{
+        headers: {
+            "Authorization": `Token ${localStorage.getItem("token")}`,
+            "Content-Type": "application/json"
+        },
+    })
         .then(res => res.json())
 }
 
@@ -18,6 +23,17 @@ export const addJournals = (newJournal) => {
         body: JSON.stringify(newJournal)
     })
     .then(getJournals)
+}
+
+export const updateJournals = (journal) => {
+    return fetch (`${URL}/journals/${journal.id}`, {
+        method: "PUT",
+        headers: {
+            "Authorization": `Token ${localStorage.getItem("token")}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(journal)
+})
 }
 
 export const deleteJournals = (id) => {

@@ -27,6 +27,9 @@ export const GardenYieldz = () => {
           <Route exact path="/login" element={<Login token={token} setToken={setToken} setUserId={setUserId} />} />
   
           <Route exact path="/register" element={<Register token={token} setToken={setToken} />} />  
+
+          <Route exact path="/journals" element={<JournalList />} />
+          <Route exact path="/plants" />
   
   
           <Route element={<PrivateRoutes token={token}/>}>

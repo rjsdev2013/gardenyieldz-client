@@ -24,7 +24,7 @@ export const Register = () => {
                 "password": password.current.value
             }
 
-            return fetch("http://127.0.0.1:3000/register", {
+            return fetch("http://127.0.0.1:8000/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -123,10 +123,6 @@ export const Register = () => {
                                     autoComplete="off" />
                             </div>
                         </fieldset>
-                        {/* <fieldset>
-                            <label htmlFor="bio"> Bio </label>
-                            <textarea ref={bio} name="bio" className="form__input__field" placeholder="Let other gamers know a little bit about you..." />
-                        </fieldset> */}
                     </div>
                     <div className="page__grid__bottom">
                         <fieldset>

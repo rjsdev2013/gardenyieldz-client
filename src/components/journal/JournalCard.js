@@ -1,3 +1,3 @@
-export const JournalCard = () => {
-    
+export const JournalCard = ({journal}) => {
+    return journal.plant.name
 }
