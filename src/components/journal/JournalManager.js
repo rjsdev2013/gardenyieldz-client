@@ -11,13 +11,20 @@ export const getJournals = () => {
 }
 
 export const getJournalById = (id) => {
-    return fetch(`${URL}/journals/${id}`)
+    return fetch(`${URL}/journals/${id}`,{
+        headers: {
+            "Authorization": `Token ${localStorage.getItem("token")}`,
+            "Content-Type": "application/json"
+        },
+    })
         .then(res => res.json())
 }
+
 export const addJournals = (newJournal) => {
     return fetch(`${URL}/journals`, {
         method: "POST",
         headers: {
+            "Authorization": `Token ${localStorage.getItem("token")}`,
             "Content-Type": "application/json"
         },
         body: JSON.stringify(newJournal)
@@ -38,7 +45,10 @@ export const updateJournals = (journal) => {
 
 export const deleteJournals = (id) => {
     return fetch(`${URL}/journals/${id}`, {
-      method: "DELETE"
+      method: "DELETE",
+      headers: {
+        "Authorization": `Token ${localStorage.getItem("token")}`
+      }
     })
     .then(getJournals)
   }

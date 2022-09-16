@@ -6,6 +6,7 @@ import {Register} from "./auth/Register"
 import "./GardenYieldz.css"
 import { JournalList } from "./journal/JournalList"
 import PrivateRoutes from "./auth/PrivateRoutes"
+import { JournalForm } from "./journal/JournalForm"
 
 
 export const GardenYieldz = () => {
@@ -29,6 +30,7 @@ export const GardenYieldz = () => {
           <Route exact path="/register" element={<Register token={token} setToken={setToken} />} />  
 
           <Route exact path="/journals" element={<JournalList />} />
+          <Route exact path="/addjournal" element={<JournalForm />} />
           <Route exact path="/plants" />
   
   
