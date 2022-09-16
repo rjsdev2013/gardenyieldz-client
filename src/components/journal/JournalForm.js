@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import { getPlants } from "../plant/PlantManager";
 import { addJournals } from "./JournalManager";
 
 export const JournalForm = () => {
@@ -7,6 +8,17 @@ export const JournalForm = () => {
         fruitNumber: 0,
         weight: 0,
         plant_id: 0
+    })
+
+    const [plants, setPlants] = useState({
+        id: 0,
+        name: "",
+        description: "",
+        plant_date: ""
+    })
+
+    useEffect(() => {
+        getPlants().then(PlantData => setPlants(PlantData))
     })
 
     return (
@@ -52,14 +64,17 @@ export const JournalForm = () => {
             </fieldset>
             <fieldset>
                 <div>
-                    <label>
-                        Plant
-                    </label>
-                    <input
-                    type="text"
-                    name="plant"
-                    placeholder="this needs to be a selector"
-                    />
+                    <select>
+                        <option className="plants">
+                            Select Plant
+                        </option>
+                        {plants.map((plant) => (
+                                 <option key={plant.id} value={plant.id}>
+                                     {plant.name}
+                                 </option>
+                                ))}
+                        
+                    </select>
                 </div>
             </fieldset>
 
