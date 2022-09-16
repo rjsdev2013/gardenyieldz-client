@@ -37,7 +37,6 @@ export const GardenYieldz = () => {
           <Route element={<PrivateRoutes token={token}/>}>
             <Route exact path="/" element={<JournalList/>}/>
   
-            {/* <Route exact path="/groups/:groupId/partners" element={<SetPartners/>} /> */}
           </Route>
         </Routes>
       </>
