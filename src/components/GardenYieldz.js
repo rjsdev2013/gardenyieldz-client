@@ -7,6 +7,7 @@ import "./GardenYieldz.css"
 import { JournalList } from "./journal/JournalList"
 import PrivateRoutes from "./auth/PrivateRoutes"
 import { JournalForm } from "./journal/JournalForm"
+import { NavBar } from "./nav/NavBar"
 
 
 export const GardenYieldz = () => {
@@ -24,6 +25,7 @@ export const GardenYieldz = () => {
   
     return (
       <>
+        <NavBar />
         <Routes>
           <Route exact path="/login" element={<Login token={token} setToken={setToken} setUserId={setUserId} />} />
   
