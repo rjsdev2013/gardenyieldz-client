@@ -19,10 +19,6 @@ export const JournalForm = () => {
         getPlants().then(PlantData => setPlants(PlantData))
     }, [])
 
-    useEffect(() => {
-        console.log(plants)
-    }, [plants])
-    
     const handleInputChange = (e) => {
         const newJournal = {...journal}
         let selectedVal = e.target.value

@@ -1,3 +1,6 @@
+import React from "react"
+import { Navigate } from "react-router-dom"
+
 export const JournalCard = ({journal}) => {
     return (
         <>
@@ -7,7 +10,7 @@ export const JournalCard = ({journal}) => {
                 <p className="journal_plant_weight">weight(in ounces) {journal.weight}</p>
                 <p className="journal_plant_numbert">number picked {journal.fruitNumber}</p>
             </div>
-            <button>edit</button>
+            <button onClick={Navigate(`/journals/${journal.id}/edit`)}>edit</button>
 
         </section>
         </>

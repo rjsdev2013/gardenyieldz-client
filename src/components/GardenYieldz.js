@@ -8,6 +8,7 @@ import { JournalList } from "./journal/JournalList"
 import PrivateRoutes from "./auth/PrivateRoutes"
 import { JournalForm } from "./journal/JournalForm"
 import { NavBar } from "./nav/NavBar"
+import { EditJournalForm } from "./journal/EditJournalForm"
 
 
 export const GardenYieldz = () => {
@@ -33,6 +34,7 @@ export const GardenYieldz = () => {
 
           <Route exact path="/journals" element={<JournalList />} />
           <Route exact path="/addjournal" element={<JournalForm />} />
+          <Route exact path="/journals/:journalId/edit" element={<EditJournalForm/>} />
           <Route exact path="/plants" />
   
   
